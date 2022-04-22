@@ -194,9 +194,11 @@
 	                        echo '    <td class="align-middle">';
 	                        echo '        <div class="input-group quantity mx-auto" style="width: 100px;">';
 	                        echo '            <div class="input-group-btn">';
-	                        echo '                <button class="btn btn-sm btn-primary btn-minus" >';
-	                        echo '                <i class="fa fa-minus"></i>';
-	                        echo '                </button>';
+
+	                        echo "                <button class='btn btn-sm btn-primary btn-minus' >";
+	                        echo "                <i class='fa fa-minus'></i>";
+	                        echo "                </button>";
+
 	                        echo '            </div>';
 	                        echo '            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="' . $product['sl'] . '">';
 	                        echo '            <div class="input-group-btn">';
@@ -206,7 +208,7 @@
 	                        echo '            </div>';
 	                        echo '        </div>';
 	                        echo '    </td>';
-	                        echo '    <td class="align-middle">$150</td>';
+	                        echo '    <td class="align-middle">'.$product['item']["product_price"]*$product['sl'].'</td>';
 	                        echo '   <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>';
                         	echo '</tr>';
 							}
@@ -229,13 +231,20 @@
                         <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
                     </div>
                     <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="font-weight-medium">$150</h6>
-                        </div>
+                    	<?php
+							$subtotal = 0; 
+							foreach ($data as $product) {
+								$subtotal += $product['item']["product_price"]*$product['sl'];
+							}
+							echo '<div class="d-flex justify-content-between mb-3 pt-1">';
+	                            echo '<h6 class="font-weight-medium">Subtotal</h6>';
+	                            echo "<h6 class='font-weight-medium'> $subtotal </h6>";
+                        	echo '</div>';
+						?>
+                        
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
+                            <h6 class="font-weight-medium">0</h6>
                         </div>
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
