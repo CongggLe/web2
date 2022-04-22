@@ -187,9 +187,9 @@
 							<?php
 							foreach ($data as $product) {
 							// var_dump($product);
-							// die;
+							// die;                            
 							echo '<tr>';
-	                        echo '    <td class="align-middle"><img src="'.$product['item']["product_img"].'" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>';
+	                        echo '    <td class="align-middle"><img src="../public/uploads/'.$product['item']["product_img"].'" alt="" style="width: 50px;">'.$product['item']["product_name"].'</td>';
 	                        echo '    <td class="align-middle">'.number_format($product['item']["product_price"]).'</td>';
 	                        echo '    <td class="align-middle">';
 	                        echo '        <div class="input-group quantity mx-auto" style="width: 100px;">';
@@ -218,14 +218,6 @@
                 </table>
             </div>
             <div class="col-lg-4">
-                <form class="mb-5" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-4" placeholder="Coupon Code">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary">Apply Coupon</button>
-                        </div>
-                    </div>
-                </form>
                 <div class="card border-secondary mb-5">
                     <div class="card-header bg-secondary border-0">
                         <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
@@ -252,7 +244,7 @@
                             <h5 class="font-weight-bold">Total</h5>
                             <h5 class="font-weight-bold">$160</h5>
                         </div>
-                        <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
+                        <button class="btn btn-block btn-primary my-3 py-3"><a href="../view/pages/checkout.php">Check out</a></button>
                     </div>
                 </div>
             </div>
