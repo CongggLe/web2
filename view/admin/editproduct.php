@@ -122,6 +122,7 @@
                         <div class="form-group">
                             <label for="product_name">Hình ảnh sản phẩm</label>
                             <img src="../../public/uploads/<?php echo $result['product_img'] ?>" alt="" width="80px"
+                            style="object-fit: contain;"
                                 height="80px" class="img-responsive m-3">
                             <input type="file" class="product_img form-control" id="product_img" name="product_img"
                                 placeholder="Nhập tên sản phẩm">

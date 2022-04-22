@@ -1,22 +1,9 @@
 <?php
     include_once "../../libs/database.php";
     include_once "../../helpers/format.php";
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of OrderController
- *
- * @author DELL
- */
-// include '../utils/vhvalidate.php';
-include_once '../utils/FileUtils.php';
-include_once '../utils/MySQLUtils.php';
-include_once '../model/SanPham.php';
+    include_once '../utils/FileUtils.php';
+    include_once '../utils/MySQLUtils.php';
+    include_once '../model/SanPham.php';
 
 class OrderController {
 
@@ -43,6 +30,11 @@ class OrderController {
                         $_SESSION["cart_item"][$prodID]->setSoLuongSP($number);
                     } else {
                         $_SESSION["cart_item"][$prodID] = $sp;
+
+    class Order
+    {
+        private $db;
+        private $fm;
 
         public function __construct()
         {

@@ -100,7 +100,7 @@
                                                         <img src='../../public/uploads/".$result['product_img']."' with='100px' height='100px' style='object-fit:cover;'>
                                                         <input type='hidden' name='old_img' value='../../public/uploads/".$result['product_img']."'>
                                                     </td>
-                                                    <td>".$result['product_price']."</td>
+                                                    <td>$".number_format($result['product_price'])."</td>
                                                     <td>".$result['product_quantity']."</td>
                                                     <td>".$fm->textShorten($result['product_desc'], 50)."</td>
                                                     <td>".$result['category_name']."</td>

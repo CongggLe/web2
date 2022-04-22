@@ -3,11 +3,10 @@ include_once "../../configs/config.php";
 
 class Database
 {
-    private $host = "localhost";
-    private $user = "root";
-    private $pass = "";
-    
-    private $dbname = "shop_php";
+    public $host = DB_HOST;
+    public $user = DB_USER;
+    public $pass = DB_PASS;
+    public $dbname = DB_NAME;
 
     public $link;
     public $error;
