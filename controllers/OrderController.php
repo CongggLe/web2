@@ -5,32 +5,6 @@
     include_once '../utils/MySQLUtils.php';
     include_once '../model/SanPham.php';
 
-class OrderController {
-
-    //put your code here
-    public function __construct($action) {
-        switch ($action) {
-            case "add": 
-                // var_dump($_GET["cart"]);
-                // die;
-                // break;
-                session_start();
-                $prodID = $_GET["cart"];
-                $sp = new SanPham($prodID, "", 0, 1, "", "");
-
-                $_SESSION["cart"][$prodID] = $sp;
-                // var_dump($_SESSION);
-                // die;
-                // break;
-                if (!empty($_SESSION["cart_item"])) {
-                    if (array_key_exists($prodID, $_SESSION["cart_item"])) {
-                        $num = (int) $_SESSION["cart_item"][$prodID]->getSoLuongSP();
-                        $number = $num + 1;
-                        echo($number);
-                        $_SESSION["cart_item"][$prodID]->setSoLuongSP($number);
-                    } else {
-                        $_SESSION["cart_item"][$prodID] = $sp;
-
     class Order
     {
         private $db;
