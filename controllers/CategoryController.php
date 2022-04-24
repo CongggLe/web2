@@ -25,7 +25,7 @@
             $category_keyword = mysqli_real_escape_string($this->db->link, $category_keyword);
             $category_status = mysqli_real_escape_string($this->db->link, $category_status);
 
-            if (empty($category_name) || empty($category_desc) || empty($category_status) || empty($category_keyword)) {
+            if (empty($category_name) || empty($category_desc) || $category_status == "" || empty($category_keyword)) {
                 $alert = "<span class='alert alert-danger'>Các trường không được để trống.</span>";
 
                 return $alert;
@@ -64,9 +64,9 @@
             $category_status = mysqli_real_escape_string($this->db->link, $category_status);
             $id = mysqli_real_escape_string($this->db->link, $id);
 
-            if (empty($category_name) || empty($category_desc) || empty($category_status) || empty($category_keyword)) {
+            if (empty($category_name) || empty($category_desc) || $category_status == "" || empty($category_keyword)) {
                 $alert = "<span class='alert alert-danger'>Các trường không được để trống.</span>";
-
+        
                 return $alert;
             } else {
                 $query = "UPDATE tbl_category SET category_name = '$category_name', category_desc = '$category_desc', category_keyword = '$category_keyword', category_status = '$category_status' WHERE category_id = '$id'";

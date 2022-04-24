@@ -25,7 +25,7 @@
             $brand_keyword = mysqli_real_escape_string($this->db->link, $brand_keyword);
             $brand_status = mysqli_real_escape_string($this->db->link, $brand_status);
 
-            if (empty($brand_name) || empty($brand_desc) || empty($brand_status) || empty($brand_keyword)) {
+            if (empty($brand_name) || empty($brand_desc) || $brand_status == "" || empty($brand_keyword)) {
                 $alert = "<span class='alert alert-danger'>Các trường không được để trống.</span>";
 
                 return $alert;
@@ -64,7 +64,7 @@
             $brand_status = mysqli_real_escape_string($this->db->link, $brand_status);
             $id = mysqli_real_escape_string($this->db->link, $id);
 
-            if (empty($brand_name) || empty($brand_desc) || empty($brand_status) || empty($brand_keyword)) {
+            if (empty($brand_name) || empty($brand_desc) || $brand_status == "" || empty($brand_keyword)) {
                 $alert = "<span class='alert alert-danger'>Các trường không được để trống.</span>";
 
                 return $alert;

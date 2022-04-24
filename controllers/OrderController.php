@@ -1,9 +1,6 @@
 <?php
     include_once "../../libs/database.php";
     include_once "../../helpers/format.php";
-    include_once '../utils/FileUtils.php';
-    include_once '../utils/MySQLUtils.php';
-    include_once '../model/SanPham.php';
 
     class Order
     {

@@ -35,7 +35,7 @@
             $unique_image = substr(md5(time()), 0, 10).".".$file_ext;
             $uploaded_image = "../../public/uploads/".$unique_image;
 
-            if (empty($product_name) || empty($product_desc) || empty($product_status) || empty($product_keyword) || empty($product_price) || empty($product_quantity) || empty($category_id) || empty($brand_id) || empty($product_type) || $file_name == "") {
+            if (empty($product_name) || empty($product_desc) || $product_status =="" || empty($product_keyword) || empty($product_price) || empty($product_quantity) || empty($category_id) || empty($brand_id) || empty($product_type) || $file_name == "") {
                 $alert = "<span class='alert alert-danger'>Các trường không được để trống.</span>";
 
                 return $alert;
@@ -79,7 +79,7 @@
             $product_type = mysqli_real_escape_string($this->db->link, $data["product_type"]);
             $old_img = mysqli_real_escape_string($this->db->link, $data["old_img"]);
             // Kiểm tra hình ảnh và lấy hình ảnh vào forder
-            $permited = array("jpg", "jpeg", "png", "gif");
+            $permited = array("jpg", "jpeg", "png", "gif", "webp");
             $file_name = $_FILES["product_img"]["name"];
             $file_size = $_FILES["product_img"]["size"];
             $file_temp = $_FILES["product_img"]["tmp_name"];
@@ -89,7 +89,7 @@
             $unique_image = substr(md5(time()), 0, 10).".".$file_ext;
             $uploaded_image = "../../public/uploads/".$unique_image;
 
-            if (empty($product_name) || empty($product_desc) || empty($product_status) || empty($product_keyword) || empty($product_price) || empty($product_quantity) || empty($category_id) || empty($brand_id) || empty($product_type)) {
+            if (empty($product_name) || empty($product_desc) || $product_status == "" || empty($product_keyword) || empty($product_price) || empty($product_quantity) || empty($category_id) || empty($brand_id) || empty($product_type)) {
                 $alert = "<span class='alert alert-danger'>Các trường không được để trống.</span>";
 
                 return $alert;

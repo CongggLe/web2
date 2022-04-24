@@ -1,5 +1,4 @@
 function ChangeToKeyword() {
-  alert("eror here");
   let keyword;
   keyword = document.getElementById("input-name").value;
   keyword = keyword.toLowerCase();

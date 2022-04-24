@@ -71,13 +71,13 @@
                                     </select>
                                 </div>";
                             }else{
-                                $category_status =  "<div class='form-group'>
-                                    <label for='category_status'>Trạng thái</label>
-                                    <select id='category_status' name='category_status' class='form-control custom-select'>
-                                        <option  value='1'>Hiện</option>
-                                        <option selected value='0'>Ẩn</option>
-                                    </select>
-                                </div>";
+                                $category_status = "<div class='form-group'>
+                                <label for='category_status'>Trạng thái</label>
+                                <select id='category_status' name='category_status' class='form-control custom-select'>
+                                    <option  value='1'>Hiện</option>
+                                    <option selected value='0'>Ẩn</option>
+                                </select>
+                            </div>";;
                             }
                     ?>
                 <form action="" method="POST">
